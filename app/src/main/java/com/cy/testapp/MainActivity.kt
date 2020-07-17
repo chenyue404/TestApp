@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -18,11 +17,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
 
         itemModels = listOf(
             ItemModel(Intent(this, AnimPopActivity::class.java), "AnimPopActivity", "小气泡弹窗动画"),
-            ItemModel(Intent(this, AnimPopActivity::class.java), "AnimPopActivity", "小气泡弹窗动画")
+            ItemModel(Intent(this, DialogActivity2::class.java), "DialogActivity2", "小气泡弹窗动画2"),
+            ItemModel(Intent(this, ScrollActivity::class.java), "ScrollActivity", "滑动demo")
         )
 
         rv_list.adapter = MyAdapter(itemModels)

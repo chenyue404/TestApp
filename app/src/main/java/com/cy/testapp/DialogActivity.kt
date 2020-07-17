@@ -1,0 +1,162 @@
+package com.cy.testapp
+
+import android.animation.Animator
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
+import android.os.Bundle
+import android.transition.AutoTransition
+import android.transition.TransitionManager
+import android.transition.TransitionSet
+import android.util.Log
+import android.view.Gravity
+import android.view.animation.OvershootInterpolator
+import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintSet
+import androidx.core.widget.NestedScrollView
+import com.zackratos.ultimatebarx.library.UltimateBarX
+import kotlinx.android.synthetic.main.activity_dialog.*
+
+class DialogActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_dialog)
+//
+//        window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+        window.setGravity(Gravity.BOTTOM)
+
+        UltimateBarX.create(UltimateBarX.STATUS_BAR)
+            .transparent()
+            .apply(this)
+
+        cl_root.bind(v_content)
+        cl_root.setDragListener(object : DragConstraintLayout.DragListener {
+            override fun onDragFinished() {
+//                doAnimation()
+            }
+
+            override fun onDragChange(scale: Float) {
+                v_bg.setBackgroundColor(
+                    cl_root.changeAlpha(
+                        0xff000000.toInt(),
+                        (0.8 - scale).toFloat()
+                    )
+                )
+                if (scale >= 1) {
+                    finish()
+                }
+            }
+        })
+
+        v_content.setOnScrollChangeListener { v: NestedScrollView?, scrollX: Int, scrollY: Int, oldScrollX: Int, oldScrollY: Int ->
+            Log.e("v_content", "scrollY: " + scrollY)
+            cl_root.setCanDragDown(scrollY == 0)
+        }
+
+//        val mDragHelper: ViewDragHelper =
+//            ViewDragHelper.create(
+//                v_content.parent as ViewGroup,
+//                object : ViewDragHelper.Callback() {
+//                    override fun tryCaptureView(child: View, pointerId: Int): Boolean {
+//                        return child == v_content
+//                    }
+//
+//                    override fun clampViewPositionVertical(child: View, top: Int, dy: Int): Int {
+//                        return top
+//                    }
+//
+//                    override fun clampViewPositionHorizontal(child: View, left: Int, dx: Int): Int {
+//                        return left
+//                    }
+//                })
+//        v_content.setOnTouchListener { v, event ->
+//            mDragHelper.processTouchEvent(event)
+//            true
+//        }
+
+//        cl_root.post {
+//            Log.e("v_content", "height: " + v_content.height)
+//            val v_content_anim =
+//                ObjectAnimator.ofFloat(
+//                    v_content,
+//                    "y",
+//                    s_bottom.y,
+//                    s_bottom.y - v_content.height
+//                )
+//            v_content_anim.interpolator = OvershootInterpolator()
+//            val v_bg_anim =
+//                ObjectAnimator.ofFloat(v_bg, "alpha", 0f, 0.8f)
+//            AnimatorSet().apply {
+//                playTogether(v_content_anim, v_bg_anim)
+//                addListener(object : Animator.AnimatorListener {
+//                    override fun onAnimationRepeat(animation: Animator?) {
+//                    }
+//
+//                    override fun onAnimationEnd(animation: Animator?) {
+//                        cl_root.updatePoints()
+//                    }
+//
+//                    override fun onAnimationCancel(animation: Animator?) {
+//                    }
+//
+//                    override fun onAnimationStart(animation: Animator?) {
+//                    }
+//                })
+//                start()
+//            }
+//        }
+
+        cl_root.post {
+            ConstraintSet().apply {
+                clone(cl_root)
+                clear(v_content.id, ConstraintSet.TOP)
+                connect(v_content.id, ConstraintSet.BOTTOM, s_bottom.id, ConstraintSet.TOP)
+                val transitionSet = TransitionSet()
+                transitionSet.apply {
+                    addTransition(AutoTransition())
+                    interpolator = OvershootInterpolator()
+                }
+                TransitionManager.beginDelayedTransition(cl_root, transitionSet)
+                applyTo(cl_root)
+            }
+            v_bg.animate()
+                .alpha(0.8f)
+                .start()
+        }
+    }
+
+    override fun onPause() {
+        overridePendingTransition(0, 0)
+        super.onPause()
+    }
+
+    override fun onBackPressed() {
+//        super.onBackPressed()
+        doAnimation()
+    }
+
+    private fun doAnimation() {
+        val v_content_anim =
+            ObjectAnimator.ofFloat(v_content, "y", v_content.y, v_content.y + cl_root.height)
+        val v_bg_anim =
+            ObjectAnimator.ofFloat(v_bg, "alpha", v_bg.alpha, 0f)
+        AnimatorSet().apply {
+            playTogether(v_content_anim, v_bg_anim)
+            addListener(object : Animator.AnimatorListener {
+                override fun onAnimationRepeat(animation: Animator?) {
+                }
+
+                override fun onAnimationEnd(animation: Animator?) {
+                    this@DialogActivity.finish()
+                }
+
+                override fun onAnimationCancel(animation: Animator?) {
+                }
+
+                override fun onAnimationStart(animation: Animator?) {
+                }
+            })
+            start()
+        }
+
+    }
+}
