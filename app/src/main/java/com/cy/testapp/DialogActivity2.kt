@@ -19,7 +19,6 @@ class DialogActivity2 : AppCompatActivity() {
 
         window.attributes.width = WindowManager.LayoutParams.MATCH_PARENT
         window.attributes.height = getScreenHeight(this) - getNavigationBarHeight(this)
-
         cl_root.bind(v_content)
         cl_root.setDragListener(object : DragConstraintLayout.DragListener {
             override fun onDragFinished() {
@@ -27,6 +26,17 @@ class DialogActivity2 : AppCompatActivity() {
             }
 
             override fun onDragChange(scale: Float) {
+//                window.setBackgroundDrawable(
+//                    ColorDrawable(
+//                        cl_root.changeAlpha(
+//                            0xff000000.toInt(),
+//                            (0.8 - scale).toFloat()
+//                        )
+//                    )
+//                )
+//                if (scale >= 1) {
+//                    finish()
+//                }
             }
 
         })

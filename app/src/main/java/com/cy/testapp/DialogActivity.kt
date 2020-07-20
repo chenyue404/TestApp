@@ -4,14 +4,10 @@ import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.os.Bundle
-import android.transition.AutoTransition
-import android.transition.TransitionManager
-import android.transition.TransitionSet
 import android.util.Log
 import android.view.Gravity
-import android.view.animation.OvershootInterpolator
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.widget.NestedScrollView
 import com.zackratos.ultimatebarx.library.UltimateBarX
 import kotlinx.android.synthetic.main.activity_dialog.*
@@ -52,72 +48,21 @@ class DialogActivity : AppCompatActivity() {
             cl_root.setCanDragDown(scrollY == 0)
         }
 
-//        val mDragHelper: ViewDragHelper =
-//            ViewDragHelper.create(
-//                v_content.parent as ViewGroup,
-//                object : ViewDragHelper.Callback() {
-//                    override fun tryCaptureView(child: View, pointerId: Int): Boolean {
-//                        return child == v_content
-//                    }
-//
-//                    override fun clampViewPositionVertical(child: View, top: Int, dy: Int): Int {
-//                        return top
-//                    }
-//
-//                    override fun clampViewPositionHorizontal(child: View, left: Int, dx: Int): Int {
-//                        return left
-//                    }
-//                })
-//        v_content.setOnTouchListener { v, event ->
-//            mDragHelper.processTouchEvent(event)
-//            true
-//        }
-
-//        cl_root.post {
-//            Log.e("v_content", "height: " + v_content.height)
-//            val v_content_anim =
-//                ObjectAnimator.ofFloat(
-//                    v_content,
-//                    "y",
-//                    s_bottom.y,
-//                    s_bottom.y - v_content.height
-//                )
-//            v_content_anim.interpolator = OvershootInterpolator()
-//            val v_bg_anim =
-//                ObjectAnimator.ofFloat(v_bg, "alpha", 0f, 0.8f)
-//            AnimatorSet().apply {
-//                playTogether(v_content_anim, v_bg_anim)
-//                addListener(object : Animator.AnimatorListener {
-//                    override fun onAnimationRepeat(animation: Animator?) {
-//                    }
-//
-//                    override fun onAnimationEnd(animation: Animator?) {
-//                        cl_root.updatePoints()
-//                    }
-//
-//                    override fun onAnimationCancel(animation: Animator?) {
-//                    }
-//
-//                    override fun onAnimationStart(animation: Animator?) {
-//                    }
-//                })
-//                start()
-//            }
-//        }
-
         cl_root.post {
-            ConstraintSet().apply {
-                clone(cl_root)
-                clear(v_content.id, ConstraintSet.TOP)
-                connect(v_content.id, ConstraintSet.BOTTOM, s_bottom.id, ConstraintSet.TOP)
-                val transitionSet = TransitionSet()
-                transitionSet.apply {
-                    addTransition(AutoTransition())
-                    interpolator = OvershootInterpolator()
-                }
-                TransitionManager.beginDelayedTransition(cl_root, transitionSet)
-                applyTo(cl_root)
-            }
+//            ConstraintSet().apply {
+//                clone(cl_root)
+//                clear(v_content.id, ConstraintSet.TOP)
+//                connect(v_content.id, ConstraintSet.BOTTOM, s_bottom.id, ConstraintSet.TOP)
+//                val transitionSet = TransitionSet()
+//                transitionSet.apply {
+//                    addTransition(AutoTransition())
+//                    interpolator = OvershootInterpolator()
+//                }
+//                TransitionManager.beginDelayedTransition(cl_root, transitionSet)
+//                applyTo(cl_root)
+//            }
+
+            v_content.startAnimation(AnimationUtils.loadAnimation(this, R.anim.profile_bottom_in))
             v_bg.animate()
                 .alpha(0.8f)
                 .start()
