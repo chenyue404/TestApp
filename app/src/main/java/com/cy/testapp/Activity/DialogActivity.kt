@@ -1,4 +1,4 @@
-package com.cy.testapp
+package com.cy.testapp.Activity
 
 import android.animation.Animator
 import android.animation.AnimatorSet
@@ -9,6 +9,7 @@ import android.view.Gravity
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.NestedScrollView
+import com.cy.testapp.R
 import com.zackratos.ultimatebarx.library.UltimateBarX
 import kotlinx.android.synthetic.main.activity_dialog.*
 
@@ -25,7 +26,8 @@ class DialogActivity : AppCompatActivity() {
             .apply(this)
 
         cl_root.bind(v_content)
-        cl_root.setDragListener(object : DragConstraintLayout.DragListener {
+        cl_root.setDragListener(object :
+            DragConstraintLayout.DragListener {
             override fun onDragFinished() {
 //                doAnimation()
             }
@@ -49,20 +51,12 @@ class DialogActivity : AppCompatActivity() {
         }
 
         cl_root.post {
-//            ConstraintSet().apply {
-//                clone(cl_root)
-//                clear(v_content.id, ConstraintSet.TOP)
-//                connect(v_content.id, ConstraintSet.BOTTOM, s_bottom.id, ConstraintSet.TOP)
-//                val transitionSet = TransitionSet()
-//                transitionSet.apply {
-//                    addTransition(AutoTransition())
-//                    interpolator = OvershootInterpolator()
-//                }
-//                TransitionManager.beginDelayedTransition(cl_root, transitionSet)
-//                applyTo(cl_root)
-//            }
-
-            v_content.startAnimation(AnimationUtils.loadAnimation(this, R.anim.profile_bottom_in))
+            v_content.startAnimation(
+                AnimationUtils.loadAnimation(
+                    this,
+                    R.anim.profile_bottom_in
+                )
+            )
             v_bg.animate()
                 .alpha(0.8f)
                 .start()

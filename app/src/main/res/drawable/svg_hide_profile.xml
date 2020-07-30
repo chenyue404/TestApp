@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="100dp"
+    android:viewportWidth="252"
+    android:viewportHeight="252">
+    <group android:name="tucen_1-2">
+        <path
+            android:name="cls-1"
+            android:fillColor="#C0C0C0"
+            android:pathData="M252 0H0V252H17.4C29.17 224 57 222.92 88 207.63c12.75-6.29 14-32.6 14-32.6s-15.7-11.47-19.56-35.22c-10.41 0-18.89-17-8.48-25.88 -0.43-9.35-6.34-74.68 52.15-73.4 62.62 1.37 52.59 64 52.15 73.4 10.41 8.88 1.92 25.88-8.48 25.88C165.84 163.56 150.14 175 150.14 175s -0.26 28.48 20.13 34.66c32.21 9.76 52.92 20.28 63.51 42.31H252Z" />
+        <path
+            android:name="cls-2"
+            android:fillColor="#efefef"
+            android:pathData="M170.27 209.69C149.88 203.51 150.14 175 150.14 175s15.69-11.47 19.56-35.22c10.41 0 18.89-17 8.48-25.88 0.44-9.35 10.47-72-52.15-73.4-58.49-1.28-52.58 64-52.15 73.4-10.41 8.88-1.92 25.88 8.48 25.88C86.24 163.56 101.94 175 101.94 175s-1.21 26.31-14 32.6C57 222.92 29.17 224 17.4 252H233.78C223.19 230 202.48 219.45 170.27 209.69Z" />
+    </group>
+</vector>

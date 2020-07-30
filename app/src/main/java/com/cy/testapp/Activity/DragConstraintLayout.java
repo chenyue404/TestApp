@@ -1,4 +1,4 @@
-package com.cy.testapp;
+package com.cy.testapp.Activity;
 
 import android.content.Context;
 import android.graphics.Color;

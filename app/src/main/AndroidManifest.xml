@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cy.testapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -9,8 +10,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AnimPopActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.AnimPopActivity" />
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,12 +19,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DialogActivity"
+            android:name=".Activity.DialogActivity"
             android:theme="@style/NoAnimActivity" />
-        <activity android:name=".ScrollActivity" />
+        <activity android:name=".Activity.ScrollActivity" />
         <activity
-            android:name=".DialogActivity2"
+            android:name=".Activity.DialogActivity2"
             android:theme="@style/style_profile_transparent" />
+        <activity android:name=".Activity.FrescoActivity" />
     </application>
 
 </manifest>

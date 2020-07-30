@@ -1,4 +1,4 @@
-package com.cy.testapp
+package com.cy.testapp.Activity
 
 import android.app.Activity
 import android.content.Context
@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.NestedScrollView
+import com.cy.testapp.R
 import kotlinx.android.synthetic.main.activity_dialog.*
 
 
@@ -20,7 +21,8 @@ class DialogActivity2 : AppCompatActivity() {
         window.attributes.width = WindowManager.LayoutParams.MATCH_PARENT
         window.attributes.height = getScreenHeight(this) - getNavigationBarHeight(this)
         cl_root.bind(v_content)
-        cl_root.setDragListener(object : DragConstraintLayout.DragListener {
+        cl_root.setDragListener(object :
+            DragConstraintLayout.DragListener {
             override fun onDragFinished() {
                 finish()
             }

@@ -1,4 +1,4 @@
-package com.cy.testapp
+package com.cy.testapp.Activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import com.cy.testapp.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,12 +22,34 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         itemModels = listOf(
-            ItemModel(Intent(this, AnimPopActivity::class.java), "AnimPopActivity", "小气泡弹窗动画"),
-            ItemModel(Intent(this, DialogActivity2::class.java), "DialogActivity2", "小气泡弹窗动画2"),
-            ItemModel(Intent(this, ScrollActivity::class.java), "ScrollActivity", "滑动demo")
+            ItemModel(
+                Intent(
+                    this,
+                    AnimPopActivity::class.java
+                ), "AnimPopActivity", "小气泡弹窗动画"
+            ),
+            ItemModel(
+                Intent(
+                    this,
+                    DialogActivity2::class.java
+                ), "DialogActivity2", "小气泡弹窗动画2"
+            ),
+            ItemModel(
+                Intent(
+                    this,
+                    ScrollActivity::class.java
+                ), "ScrollActivity", "滑动demo"
+            ),
+            ItemModel(
+                Intent(
+                    this,
+                    FrescoActivity::class.java
+                ), "FrescoActivity", "Fresco demo"
+            )
         )
 
-        rv_list.adapter = MyAdapter(itemModels)
+        rv_list.adapter =
+            MyAdapter(itemModels)
         rv_list.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
     }
 

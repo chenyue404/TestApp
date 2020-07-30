@@ -1,8 +1,9 @@
-package com.cy.testapp
+package com.cy.testapp.Activity
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.cy.testapp.R
 import kotlinx.android.synthetic.main.activity_anim_pop.*
 
 class AnimPopActivity : AppCompatActivity() {

@@ -1,7 +1,8 @@
-package com.cy.testapp
+package com.cy.testapp.Activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.cy.testapp.R
 import kotlinx.android.synthetic.main.activity_scroll.*
 
 class ScrollActivity : AppCompatActivity() {
