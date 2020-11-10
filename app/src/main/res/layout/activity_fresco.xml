@@ -21,10 +21,11 @@
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/sdv_1"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:placeholderImage="@drawable/svg_hide_profile"
-            app:viewAspectRatio="1" />
+            android:layout_width="match_parent"
+            app:viewAspectRatio="1"
+            android:layout_height="wrap_content"
+            app:roundedCornerRadius="0dp"
+            app:placeholderImage="@drawable/svg_hide_profile" />
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/sdv_2"

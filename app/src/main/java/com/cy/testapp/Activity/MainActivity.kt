@@ -1,6 +1,8 @@
 package com.cy.testapp.Activity
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -45,6 +47,11 @@ class MainActivity : AppCompatActivity() {
                     this,
                     FrescoActivity::class.java
                 ), "FrescoActivity", "Fresco demo"
+            ),
+            ItemModel(
+                Intent(
+                    Intent.ACTION_VIEW, Uri.parse("weixin://dl/moments")
+                ), "scheme test", "scheme test"
             )
         )
 
@@ -78,7 +85,11 @@ class MainActivity : AppCompatActivity() {
             holder.tv_title.text = dataList[position].title
             holder.tv_description.text = dataList[position].description
             holder.itemView.setOnClickListener {
-                it.context.startActivity(dataList[position].intent)
+                try {
+                    it.context.startActivity(dataList[position].intent)
+                } catch (e: ActivityNotFoundException) {
+                    e.printStackTrace()
+                }
             }
         }
 
