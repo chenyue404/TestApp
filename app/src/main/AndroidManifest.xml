@@ -3,6 +3,8 @@
     package="com.cy.testapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -26,6 +28,7 @@
             android:name=".Activity.DialogActivity2"
             android:theme="@style/style_profile_transparent" />
         <activity android:name=".Activity.FrescoActivity" />
+        <activity android:name=".Activity.LocationActivity" />
     </application>
 
 </manifest>

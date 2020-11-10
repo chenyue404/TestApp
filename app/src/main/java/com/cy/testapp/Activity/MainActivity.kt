@@ -52,6 +52,12 @@ class MainActivity : AppCompatActivity() {
                 Intent(
                     Intent.ACTION_VIEW, Uri.parse("weixin://dl/moments")
                 ), "scheme test", "scheme test"
+            ),
+            ItemModel(
+                Intent(
+                    this,
+                    LocationActivity::class.java
+                ), "LocationActivity", "Location demo"
             )
         )
 
