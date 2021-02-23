@@ -58,6 +58,18 @@ class MainActivity : AppCompatActivity() {
                     this,
                     LocationActivity::class.java
                 ), "LocationActivity", "Location demo"
+            ),
+            ItemModel(
+                Intent(
+                    this,
+                    AnimerActivity::class.java
+                ), "AnimerActivity", "Animer demo"
+            ),
+            ItemModel(
+                Intent(
+                    this,
+                    AnimerActivityJava::class.java
+                ), "AnimerActivityJava", "Animer Java demo"
             )
         )
 

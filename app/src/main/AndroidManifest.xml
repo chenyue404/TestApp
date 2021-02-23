@@ -12,6 +12,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Activity.AnimerActivityJava"></activity>
+        <activity android:name=".Activity.AnimerActivity" />
         <activity android:name=".Activity.AnimPopActivity" />
         <activity android:name=".Activity.MainActivity">
             <intent-filter>
