@@ -111,12 +111,10 @@ class LocationActivity : Activity() {
         var provider = locationManager.getBestProvider(criteria, true)
         provider = LocationManager.NETWORK_PROVIDER
         val locationListener = object : LocationListener {
-            override fun onLocationChanged(location: Location?) {
-                location?.let {
+            override fun onLocationChanged(location: Location) {
+                location.let {
                     Log.e(TAG, "onLocationChanged: $location")
                     locationManager.removeUpdates(this)
-                } ?: run {
-                    Log.e(TAG, "onLocationChanged: null")
                 }
             }
 
@@ -124,11 +122,11 @@ class LocationActivity : Activity() {
                 Log.e(TAG, "onStatusChanged: $provider-$status-$extras")
             }
 
-            override fun onProviderEnabled(provider: String?) {
+            override fun onProviderEnabled(provider: String) {
                 Log.e(TAG, "onProviderEnabled: $provider")
             }
 
-            override fun onProviderDisabled(provider: String?) {
+            override fun onProviderDisabled(provider: String) {
                 Log.e(TAG, "onProviderDisabled: $provider")
             }
 
