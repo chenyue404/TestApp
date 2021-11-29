@@ -70,6 +70,12 @@ class MainActivity : AppCompatActivity() {
                     this,
                     AnimerActivityJava::class.java
                 ), "AnimerActivityJava", "Animer Java demo"
+            ),
+            ItemModel(
+                Intent(
+                    this,
+                    FlowActivity::class.java
+                ), "FlowActivity", "Kotlin flow demo"
             )
         )
 
