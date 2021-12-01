@@ -4,10 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.work.PeriodicWorkRequestBuilder
-import androidx.work.WorkManager
-import androidx.work.Worker
-import androidx.work.WorkerParameters
+import androidx.work.*
 import com.cy.testapp.R
 import java.util.concurrent.TimeUnit
 
@@ -27,6 +24,9 @@ class WorkMangerActivity : AppCompatActivity() {
             ).build()
             WorkManager.getInstance(this).enqueue(
                 workRequestBuilder
+            )
+            WorkManager.getInstance(this).enqueue(
+                OneTimeWorkRequest.from(TextWorker::class.java)
             )
         }
     }

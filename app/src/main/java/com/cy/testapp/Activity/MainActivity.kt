@@ -76,6 +76,12 @@ class MainActivity : AppCompatActivity() {
                     this,
                     FlowActivity::class.java
                 ), "FlowActivity", "Kotlin flow demo"
+            ),
+            ItemModel(
+                Intent(
+                    this,
+                    WorkMangerActivity::class.java
+                ), "WorkMangerActivity", "WorkManager demo"
             )
         )
 

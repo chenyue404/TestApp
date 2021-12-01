@@ -10,7 +10,7 @@ import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.NestedScrollView
 import com.cy.testapp.R
-import com.zackratos.ultimatebarx.library.UltimateBarX
+import com.zackratos.ultimatebarx.ultimatebarx.UltimateBarX
 import kotlinx.android.synthetic.main.activity_dialog.*
 
 class DialogActivity : AppCompatActivity() {
@@ -21,9 +21,9 @@ class DialogActivity : AppCompatActivity() {
 //        window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
         window.setGravity(Gravity.BOTTOM)
 
-        UltimateBarX.create(UltimateBarX.STATUS_BAR)
+        UltimateBarX.with(this)
             .transparent()
-            .apply(this)
+            .applyStatusBar()
 
         cl_root.bind(v_content)
         cl_root.setDragListener(object :
