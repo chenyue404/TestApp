@@ -12,11 +12,11 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.AnimerActivityJava" />
-        <activity android:name=".Activity.AnimerActivity" />
-        <activity android:name=".Activity.AnimPopActivity" />
+        <activity android:name=".activity.AnimerActivityJava" />
+        <activity android:name=".activity.AnimerActivity" />
+        <activity android:name=".activity.AnimPopActivity" />
         <activity
-            android:name=".Activity.MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,16 +25,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity.DialogActivity"
+            android:name=".activity.DialogActivity"
             android:theme="@style/NoAnimActivity" />
-        <activity android:name=".Activity.ScrollActivity" />
+        <activity android:name=".activity.ScrollActivity" />
         <activity
-            android:name=".Activity.DialogActivity2"
+            android:name=".activity.DialogActivity2"
             android:theme="@style/style_profile_transparent" />
-        <activity android:name=".Activity.FrescoActivity" />
-        <activity android:name=".Activity.LocationActivity" />
-        <activity android:name=".Activity.FlowActivity" />
-        <activity android:name=".Activity.WorkMangerActivity" />
+        <activity android:name=".activity.FrescoActivity" />
+        <activity android:name=".activity.LocationActivity" />
+        <activity android:name=".activity.FlowActivity" />
+        <activity android:name=".activity.WorkMangerActivity" />
     </application>
 
 </manifest>
