@@ -10,7 +10,7 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.NestedScrollView
 import com.cy.testapp.R
-import com.cy.testapp.bind
+import com.cy.testapp.ext.bind
 
 
 class DialogActivity2 : AppCompatActivity() {

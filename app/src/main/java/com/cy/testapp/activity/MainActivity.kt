@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.cy.testapp.R
-import com.cy.testapp.bind
+import com.cy.testapp.ext.bind
 
 class MainActivity : AppCompatActivity() {
 

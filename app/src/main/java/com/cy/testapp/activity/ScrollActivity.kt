@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.cy.testapp.R
-import com.cy.testapp.bind
+import com.cy.testapp.ext.bind
 
 class ScrollActivity : AppCompatActivity() {
     private val v_top by bind<View>(R.id.v_top)

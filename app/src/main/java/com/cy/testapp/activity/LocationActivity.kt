@@ -13,7 +13,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import com.cy.testapp.R
-import com.cy.testapp.bind
+import com.cy.testapp.ext.bind
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
 

@@ -1,4 +1,4 @@
-package com.cy.testapp
+package com.cy.testapp.ext
 
 import android.app.Activity
 import android.app.Dialog
