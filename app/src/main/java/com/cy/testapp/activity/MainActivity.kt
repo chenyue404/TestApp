@@ -83,6 +83,12 @@ class MainActivity : AppCompatActivity() {
                     this,
                     WorkMangerActivity::class.java
                 ), "WorkMangerActivity", "WorkManager demo"
+            ),
+            ItemModel(
+                Intent(
+                    this,
+                    FloatWindowActivity::class.java
+                ), "FloatWindowActivity", "悬浮窗demo"
             )
         )
 

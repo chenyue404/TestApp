@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!--    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />-->
 
     <application
         android:name=".App"
@@ -35,6 +37,9 @@
         <activity android:name=".activity.LocationActivity" />
         <activity android:name=".activity.FlowActivity" />
         <activity android:name=".activity.WorkMangerActivity" />
+        <activity android:name=".activity.FloatWindowActivity" />
+
+        <service android:name=".FloatWindowService" />
     </application>
 
 </manifest>
