@@ -89,6 +89,12 @@ class MainActivity : AppCompatActivity() {
                     this,
                     FloatWindowActivity::class.java
                 ), "FloatWindowActivity", "悬浮窗demo"
+            ),
+            ItemModel(
+                Intent(
+                    this,
+                    InputActivity::class.java
+                ), "InputActivity", "输入框demo"
             )
         )
 

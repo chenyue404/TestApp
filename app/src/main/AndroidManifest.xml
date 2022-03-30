@@ -38,6 +38,7 @@
         <activity android:name=".activity.FlowActivity" />
         <activity android:name=".activity.WorkMangerActivity" />
         <activity android:name=".activity.FloatWindowActivity" />
+        <activity android:name=".activity.InputActivity" />
 
         <service android:name=".FloatWindowService" />
     </application>
