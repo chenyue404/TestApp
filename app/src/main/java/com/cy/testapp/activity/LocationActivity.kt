@@ -102,6 +102,7 @@ class LocationActivity : Activity() {
                 }
             }
 
+            @Deprecated("Deprecated in Java")
             override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {
                 Log.e(TAG, "onStatusChanged: $provider-$status-$extras")
             }

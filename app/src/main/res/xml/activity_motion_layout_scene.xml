@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:defaultDuration="300">
+
+    <Transition
+        app:constraintSetEnd="@id/set_apps_show"
+        app:constraintSetStart="@id/set_apps_hide">
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:maxAcceleration="10"
+            app:maxVelocity="10"
+            app:touchRegionId="@id/vDragBottom" />
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="50"
+                app:motionTarget="@id/vApps" />
+        </KeyFrameSet>
+
+    </Transition>
+
+    <Transition
+        app:constraintSetEnd="@id/set_apps_show"
+        app:constraintSetStart="@id/set_apps_hide">
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:maxAcceleration="10"
+            app:maxVelocity="10"
+            app:touchRegionId="@id/vDragHome" />
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="50"
+                app:motionTarget="@id/vApps" />
+        </KeyFrameSet>
+    </Transition>
+
+    <Transition
+        app:constraintSetEnd="@id/set_apps_show"
+        app:constraintSetStart="@id/set_apps_hide">
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:maxAcceleration="10"
+            app:maxVelocity="10"
+            app:touchRegionId="@id/vDragTop" />
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="50"
+                app:motionTarget="@id/vApps" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/set_apps_hide">
+        <Constraint
+            android:id="@id/vApps"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:alpha="0"
+            app:layout_constraintHeight_percent="1"
+            app:layout_constraintTop_toBottomOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/set_apps_show">
+        <Constraint
+            android:id="@id/vApps"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:alpha="1"
+            app:layout_constraintHeight_percent="1"
+            app:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+
+
+    <!--    <Transition-->
+    <!--        app:constraintSetEnd="@id/set_detail_show"-->
+    <!--        app:constraintSetStart="@id/set_detail_hide">-->
+    <!--        <OnClick-->
+    <!--            app:clickAction="toggle"-->
+    <!--            app:targetId="@id/vDragHome2" />-->
+    <!--    </Transition>-->
+
+    <ConstraintSet android:id="@+id/set_detail_show">
+        <Constraint
+            android:id="@id/vAppDetail"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/vDragBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.8" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/set_detail_hide">
+        <Constraint
+            android:id="@id/vAppDetail"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/vDragBottom"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.8" />
+    </ConstraintSet>
+</MotionScene>

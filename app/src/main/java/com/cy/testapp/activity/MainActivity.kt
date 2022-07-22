@@ -28,6 +28,12 @@ class MainActivity : AppCompatActivity() {
             ItemModel(
                 Intent(
                     this,
+                    MotionLayoutActivity::class.java
+                ), "MotionLayoutActivity", "MotionLayoutActivity"
+            ),
+            ItemModel(
+                Intent(
+                    this,
                     AnimPopActivity::class.java
                 ), "AnimPopActivity", "小气泡弹窗动画"
             ),
@@ -101,6 +107,8 @@ class MainActivity : AppCompatActivity() {
         rv_list.adapter =
             MyAdapter(itemModels)
         rv_list.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+
+        startActivity(itemModels.first().intent)
     }
 
     class ItemModel(
