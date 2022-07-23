@@ -6,9 +6,9 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.constraintlayout.widget.ConstraintSet
-import com.cy.testapp.ClickableMotionLayout
 import com.cy.testapp.R
 import com.cy.testapp.ext.log
+import com.cy.testapp.widget.ClickableMotionLayout
 
 /**
  * Created by chenyue on 2022/7/21 0021.

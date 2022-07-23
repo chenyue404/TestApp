@@ -41,6 +41,7 @@
         <activity android:name=".activity.FloatWindowActivity" />
         <activity android:name=".activity.InputActivity" />
         <activity android:name=".activity.MotionLayoutActivity" />
+        <activity android:name=".activity.ThreeFingerActivity" />
 
         <service android:name=".FloatWindowService" />
     </application>

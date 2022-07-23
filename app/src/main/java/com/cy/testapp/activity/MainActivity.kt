@@ -28,6 +28,12 @@ class MainActivity : AppCompatActivity() {
             ItemModel(
                 Intent(
                     this,
+                    ThreeFingerActivity::class.java
+                ), "三只检测", "三只检测"
+            ),
+            ItemModel(
+                Intent(
+                    this,
                     MotionLayoutActivity::class.java
                 ), "MotionLayoutActivity", "MotionLayoutActivity"
             ),

@@ -1,4 +1,4 @@
-package com.cy.testapp
+package com.cy.testapp.widget
 
 import android.content.Context
 import android.util.AttributeSet
