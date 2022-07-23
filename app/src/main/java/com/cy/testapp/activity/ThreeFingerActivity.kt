@@ -18,7 +18,7 @@ import kotlin.math.abs
  * Created by chenyue on 2022/7/23 0023.
  */
 class ThreeFingerActivity : AppCompatActivity() {
-    private val THRESHOLD = 100
+    private val THRESHOLD = 300
 
     private val tv01: TextView by lazy { findViewById(R.id.tv01) }
     private val vp01: ViewPager by lazy { findViewById(R.id.vp01) }
@@ -92,6 +92,7 @@ class ThreeFingerActivity : AppCompatActivity() {
                     for (i in 0 until pointerCount.coerceAtMost(3)) {
                         pointArrayEnd[i] = Pair(event.x, event.y)
                     }
+                    if (event.actionIndex < 2) return true
                 }
             }
         }
