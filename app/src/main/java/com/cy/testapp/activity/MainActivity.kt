@@ -28,8 +28,14 @@ class MainActivity : AppCompatActivity() {
             ItemModel(
                 Intent(
                     this,
+                    GestureActivity::class.java
+                ), "手势", "手势"
+            ),
+            ItemModel(
+                Intent(
+                    this,
                     ThreeFingerActivity::class.java
-                ), "三只检测", "三只检测"
+                ), "三指检测", "三指检测"
             ),
             ItemModel(
                 Intent(
