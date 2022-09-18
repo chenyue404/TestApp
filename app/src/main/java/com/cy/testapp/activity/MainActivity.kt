@@ -28,6 +28,12 @@ class MainActivity : AppCompatActivity() {
             ItemModel(
                 Intent(
                     this,
+                    VibratorActivity::class.java
+                ), "震动", "震动"
+            ),
+            ItemModel(
+                Intent(
+                    this,
                     GestureActivity::class.java
                 ), "手势", "手势"
             ),
