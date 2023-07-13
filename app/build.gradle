@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion "31.0.0"
+    compileSdkVersion 33
+    buildToolsVersion "33.0.2"
 
     defaultConfig {
         applicationId "com.cy.testapp"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -23,6 +23,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+    namespace 'com.cy.testapp'
 
 }
 
@@ -41,5 +42,7 @@ dependencies {
 
     implementation 'com.facebook.fresco:fresco:2.6.0'
     implementation 'com.gitee.zackratos:UltimateBarX:0.8.0'
-    implementation 'com.github.liangjingkanji:LogCat:1.1.0'
+    implementation 'com.github.chenyue404:AndroidLib:1.0.10'
+    implementation 'org.lsposed.hiddenapibypass:hiddenapibypass:4.3'
+    implementation 'com.github.tiann:FreeReflection:3.1.0'
 }

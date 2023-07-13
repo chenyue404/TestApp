@@ -3,7 +3,12 @@ package com.cy.testapp
 import android.graphics.PixelFormat
 import android.os.Build
 import android.util.DisplayMetrics
-import android.view.*
+import android.view.GestureDetector
+import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.MotionEvent
+import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.core.view.GestureDetectorCompat
 import androidx.lifecycle.LifecycleService
@@ -23,29 +28,29 @@ class FloatWindowService : LifecycleService() {
             var y = 0f
             val gestureDetectorCompat =
                 GestureDetectorCompat(context, object : GestureDetector.OnGestureListener {
-                    override fun onDown(e: MotionEvent?) = false
+                    override fun onDown(e: MotionEvent) = false
 
-                    override fun onShowPress(e: MotionEvent?) {
+                    override fun onShowPress(e: MotionEvent) {
                     }
 
-                    override fun onSingleTapUp(e: MotionEvent?): Boolean {
+                    override fun onSingleTapUp(e: MotionEvent): Boolean {
                         Toast.makeText(context, "onSingleTapUp", Toast.LENGTH_SHORT).show()
                         return true
                     }
 
                     override fun onScroll(
-                        e1: MotionEvent?,
-                        e2: MotionEvent?,
+                        e1: MotionEvent,
+                        e2: MotionEvent,
                         distanceX: Float,
                         distanceY: Float
                     ) = false
 
-                    override fun onLongPress(e: MotionEvent?) {
+                    override fun onLongPress(e: MotionEvent) {
                     }
 
                     override fun onFling(
-                        e1: MotionEvent?,
-                        e2: MotionEvent?,
+                        e1: MotionEvent,
+                        e2: MotionEvent,
                         velocityX: Float,
                         velocityY: Float
                     ) = false

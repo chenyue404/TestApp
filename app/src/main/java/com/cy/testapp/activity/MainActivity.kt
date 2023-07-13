@@ -28,6 +28,11 @@ class MainActivity : AppCompatActivity() {
             ItemModel(
                 Intent(
                     this,
+                    AppListActivity::class.java
+                ), "应用列表", "应用列表"
+            ), ItemModel(
+                Intent(
+                    this,
                     VibratorActivity::class.java
                 ), "震动", "震动"
             ),

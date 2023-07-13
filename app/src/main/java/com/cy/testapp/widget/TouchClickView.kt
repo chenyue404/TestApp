@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
+import com.chenyue404.androidlib.ContextProvider.Companion.mContext
 import com.cy.testapp.ext.log
 
 /**
@@ -16,7 +17,7 @@ class TouchClickView @JvmOverloads constructor(
 
     private val onGestureListener: GestureDetector.OnGestureListener by lazy {
         object : GestureDetector.SimpleOnGestureListener() {
-            override fun onSingleTapUp(e: MotionEvent?): Boolean {
+            override fun onSingleTapUp(e: MotionEvent): Boolean {
 //                return super.onSingleTapUp(e)
                 val singleTapUp = super.onSingleTapUp(e)
                 log("onSingleTapUp=$singleTapUp")
@@ -24,20 +25,20 @@ class TouchClickView @JvmOverloads constructor(
                 return singleTapUp
             }
 
-            override fun onDown(e: MotionEvent?): Boolean {
+            override fun onDown(e: MotionEvent): Boolean {
                 log("onDown")
 //                return super.onDown(e)
                 return true
             }
 
-            override fun onShowPress(e: MotionEvent?) {
+            override fun onShowPress(e: MotionEvent) {
                 log("onShowPress")
                 super.onShowPress(e)
             }
 
             override fun onScroll(
-                e1: MotionEvent?,
-                e2: MotionEvent?,
+                e1: MotionEvent,
+                e2: MotionEvent,
                 distanceX: Float,
                 distanceY: Float
             ): Boolean {
@@ -46,14 +47,14 @@ class TouchClickView @JvmOverloads constructor(
                 return true
             }
 
-            override fun onLongPress(e: MotionEvent?) {
+            override fun onLongPress(e: MotionEvent) {
                 log("onLongPress")
                 super.onLongPress(e)
             }
 
             override fun onFling(
-                e1: MotionEvent?,
-                e2: MotionEvent?,
+                e1: MotionEvent,
+                e2: MotionEvent,
                 velocityX: Float,
                 velocityY: Float
             ): Boolean {
@@ -62,22 +63,22 @@ class TouchClickView @JvmOverloads constructor(
                 return true
             }
 
-            override fun onSingleTapConfirmed(e: MotionEvent?): Boolean {
+            override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
                 log("onSingleTapConfirmed")
                 return super.onSingleTapConfirmed(e)
             }
 
-            override fun onDoubleTap(e: MotionEvent?): Boolean {
+            override fun onDoubleTap(e: MotionEvent): Boolean {
                 log("onDoubleTap")
                 return super.onDoubleTap(e)
             }
 
-            override fun onDoubleTapEvent(e: MotionEvent?): Boolean {
+            override fun onDoubleTapEvent(e: MotionEvent): Boolean {
                 log("onDoubleTapEvent")
                 return super.onDoubleTapEvent(e)
             }
 
-            override fun onContextClick(e: MotionEvent?): Boolean {
+            override fun onContextClick(e: MotionEvent): Boolean {
                 log("onContextClick")
                 return super.onContextClick(e)
             }
@@ -92,7 +93,7 @@ class TouchClickView @JvmOverloads constructor(
         })
     }
 
-    override fun onTouchEvent(event: MotionEvent?): Boolean {
+    override fun onTouchEvent(event: MotionEvent): Boolean {
 //        return super.onTouchEvent(event)
         return mGestureDetector.onTouchEvent(event)
     }

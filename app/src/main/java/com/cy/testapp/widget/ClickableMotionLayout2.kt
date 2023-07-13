@@ -33,17 +33,19 @@ class ClickableMotionLayout2 @JvmOverloads constructor(
 
     private fun setupGestureListener() {
         gestureListener = object : GestureDetector.SimpleOnGestureListener() {
-            override fun onLongPress(e: MotionEvent?) {
+            override fun onLongPress(e: MotionEvent) {
                 isPressed = progress == 0f
                 isLongPressing = progress == 0f
             }
 
-            override fun onSingleTapUp(e: MotionEvent?): Boolean {
+            override fun onSingleTapUp(e: MotionEvent): Boolean {
                 isPressed = true
                 performClick()
                 return true
             }
         }
-        compatGestureDetector = GestureDetector(context, gestureListener)
+        gestureListener?.let {
+            compatGestureDetector = GestureDetector(context, it)
+        }
     }
 }

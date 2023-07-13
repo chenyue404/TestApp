@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cy.testapp">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -46,6 +45,7 @@
         <activity android:name=".activity.ThreeFingerActivity" />
         <activity android:name=".activity.GestureActivity" />
         <activity android:name=".activity.VibratorActivity" />
+        <activity android:name=".activity.AppListActivity" />
 
         <service android:name=".FloatWindowService" />
     </application>
