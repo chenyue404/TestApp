@@ -10,8 +10,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.chenyue404.androidlib.extends.log
 import com.cy.testapp.R
-import com.cy.testapp.ext.log
 import kotlin.math.abs
 
 /**

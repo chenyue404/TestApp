@@ -3,8 +3,8 @@ package com.cy.testapp.activity
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.chenyue404.androidlib.extends.bind
 import com.cy.testapp.R
-import com.cy.testapp.ext.bind
 import com.facebook.common.util.UriUtil
 import com.facebook.drawee.drawable.ScalingUtils
 import com.facebook.drawee.view.SimpleDraweeView

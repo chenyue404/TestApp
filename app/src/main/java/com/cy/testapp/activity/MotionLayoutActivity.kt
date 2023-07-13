@@ -6,8 +6,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.constraintlayout.widget.ConstraintSet
+import com.chenyue404.androidlib.extends.log
 import com.cy.testapp.R
-import com.cy.testapp.ext.log
 import com.cy.testapp.widget.ClickableMotionLayout
 
 /**

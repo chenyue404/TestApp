@@ -6,9 +6,9 @@ import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
 import androidx.core.widget.doAfterTextChanged
+import com.chenyue404.androidlib.extends.bind
 import com.cy.testapp.R
 import com.cy.testapp.ScreenShotListenManager
-import com.cy.testapp.ext.bind
 
 /**
  * Created by cy on 2022/3/30.

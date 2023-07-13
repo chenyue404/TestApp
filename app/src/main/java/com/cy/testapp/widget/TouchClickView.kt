@@ -6,7 +6,7 @@ import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
 import com.chenyue404.androidlib.ContextProvider.Companion.mContext
-import com.cy.testapp.ext.log
+import com.chenyue404.androidlib.extends.log
 
 /**
  * Created by chenyue on 2022/7/22 0022.

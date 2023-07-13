@@ -10,8 +10,8 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.NestedScrollView
+import com.chenyue404.androidlib.extends.bind
 import com.cy.testapp.R
-import com.cy.testapp.ext.bind
 import com.zackratos.ultimatebarx.ultimatebarx.java.UltimateBarX
 
 class DialogActivity : AppCompatActivity() {

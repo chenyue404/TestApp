@@ -11,11 +11,11 @@ import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.chenyue404.androidlib.extends.bind
+import com.chenyue404.androidlib.extends.log
 import com.cy.testapp.FloatWindowService
 import com.cy.testapp.FloatWindowVM
 import com.cy.testapp.R
-import com.cy.testapp.ext.bind
-import com.cy.testapp.ext.log
 
 /**
  * Created by cy on 2022/1/13.

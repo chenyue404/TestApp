@@ -10,8 +10,8 @@ import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
+import com.chenyue404.androidlib.extends.log
 import com.cy.testapp.R
-import com.cy.testapp.ext.log
 import kotlin.math.abs
 
 /**

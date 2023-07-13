@@ -12,7 +12,7 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.core.view.GestureDetectorCompat
 import androidx.lifecycle.LifecycleService
-import com.cy.testapp.ext.log
+import com.chenyue404.androidlib.extends.log
 
 /**
  * Created by cy on 2022/1/13.

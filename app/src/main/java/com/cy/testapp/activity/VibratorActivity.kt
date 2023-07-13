@@ -9,8 +9,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.setPadding
 import androidx.recyclerview.widget.RecyclerView
+import com.chenyue404.androidlib.extends.bind
 import com.cy.testapp.R
-import com.cy.testapp.ext.bind
 
 /**
  * Created by chenyue on 2022/9/18 0018.

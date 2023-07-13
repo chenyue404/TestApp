@@ -12,8 +12,8 @@ import android.location.LocationManager
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import com.chenyue404.androidlib.extends.bind
 import com.cy.testapp.R
-import com.cy.testapp.ext.bind
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.*
 

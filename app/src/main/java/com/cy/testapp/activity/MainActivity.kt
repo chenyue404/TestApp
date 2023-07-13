@@ -11,8 +11,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import com.chenyue404.androidlib.extends.bind
 import com.cy.testapp.R
-import com.cy.testapp.ext.bind
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,9 +28,16 @@ class MainActivity : AppCompatActivity() {
             ItemModel(
                 Intent(
                     this,
+                    NotificationActivity::class.java
+                ), "通知测试", "通知测试"
+            ),
+            ItemModel(
+                Intent(
+                    this,
                     AppListActivity::class.java
                 ), "应用列表", "应用列表"
-            ), ItemModel(
+            ),
+            ItemModel(
                 Intent(
                     this,
                     VibratorActivity::class.java
@@ -131,7 +138,7 @@ class MainActivity : AppCompatActivity() {
             MyAdapter(itemModels)
         rv_list.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
-        startActivity(itemModels.first().intent)
+//        startActivity(itemModels.first().intent)
     }
 
     class ItemModel(
