@@ -16,8 +16,8 @@ import com.cy.testapp.R
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var itemModels: List<ItemModel>
-    private val rv_list by bind<RecyclerView>(R.id.rv_list)
+    private lateinit var itemModels: List<ItemModel>
+    private val rvList by bind<RecyclerView>(R.id.rv_list)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -134,9 +134,9 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
-        rv_list.adapter =
+        rvList.adapter =
             MyAdapter(itemModels)
-        rv_list.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+        rvList.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
 //        startActivity(itemModels.first().intent)
     }
