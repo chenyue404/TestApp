@@ -3,6 +3,7 @@ package com.cy.testapp.activity
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -25,6 +26,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         itemModels = listOf(
+            ItemModel(
+                Intent(
+                    this,
+                    ThemeActivity::class.java
+                ), "主题测试", "主题测试"
+            ),
             ItemModel(
                 Intent(
                     this,
@@ -138,7 +145,7 @@ class MainActivity : AppCompatActivity() {
             MyAdapter(itemModels)
         rvList.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
-//        startActivity(itemModels.first().intent)
+        startActivity(itemModels.first().intent)
     }
 
     class ItemModel(
@@ -163,14 +170,18 @@ class MainActivity : AppCompatActivity() {
 
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            holder.tv_title.text = dataList[position].title
-            holder.tv_description.text = dataList[position].description
+            val itemModel = dataList[position]
+            holder.tv_title.text = itemModel.title
+            holder.tv_description.text = itemModel.description
             holder.itemView.setOnClickListener {
                 try {
-                    it.context.startActivity(dataList[position].intent)
+                    it.context.startActivity(itemModel.intent)
                 } catch (e: ActivityNotFoundException) {
                     e.printStackTrace()
                 }
+            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                holder.itemView.tooltipText = itemModel.description
             }
         }
 

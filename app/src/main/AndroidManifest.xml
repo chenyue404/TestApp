@@ -50,6 +50,7 @@
         <activity
             android:name=".activity.NotificationActivity"
             android:launchMode="singleTop" />
+        <activity android:name=".activity.ThemeActivity" />
 
         <service android:name=".FloatWindowService" />
     </application>
