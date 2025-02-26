@@ -145,7 +145,7 @@ class MainActivity : AppCompatActivity() {
             MyAdapter(itemModels)
         rvList.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
-        startActivity(itemModels.first().intent)
+//        startActivity(itemModels.first().intent)
     }
 
     class ItemModel(
