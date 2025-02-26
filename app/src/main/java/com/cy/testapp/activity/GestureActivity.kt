@@ -154,7 +154,7 @@ class GestureActivity : AppCompatActivity() {
         GestureDetector(this,
             object : GestureDetector.SimpleOnGestureListener() {
                 override fun onScroll(
-                    e1: MotionEvent,
+                    e1: MotionEvent?,
                     e2: MotionEvent,
                     distanceX: Float,
                     distanceY: Float
@@ -164,13 +164,13 @@ class GestureActivity : AppCompatActivity() {
 //                    return super.onScroll(e1, e2, distanceX, distanceY)
 
                     if (vApps.translationY == -vApps.height.toFloat()
-                        || e2.rawY >= e1.rawY
+                        || e2.rawY >= (e1?.rawY ?: 0f)
                     ) {
                         return super.onScroll(e1, e2, distanceX, distanceY)
                     }
 
-                    val scrollY = e2.y - e1.y
-                    val chaRawY = e2.rawY - e1.rawY
+                    val scrollY = e2.y - (e1?.y ?: 0f)
+                    val chaRawY = e2.rawY - (e1?.rawY ?: 0f)
                     log("scrollY=$scrollY, chaRawY=$chaRawY")
                     vApps.translationY = scrollY
                         .coerceAtMost(0f)
@@ -179,13 +179,13 @@ class GestureActivity : AppCompatActivity() {
                 }
 
                 override fun onFling(
-                    e1: MotionEvent,
+                    e1: MotionEvent?,
                     e2: MotionEvent,
                     velocityX: Float,
                     velocityY: Float
                 ): Boolean {
                     log(
-                        "onFling, e1=(${e1.rawX},${e1.rawY}), e2=(${e2.rawX},${e2.rawY}), " +
+                        "onFling, e1=(${e1?.rawX},${e1?.rawY}), e2=(${e2.rawX},${e2.rawY}), " +
                                 "velocityX=$velocityX, velocityY=$velocityY"
                     )
                     this@GestureActivity.velocityY = velocityY
@@ -204,12 +204,12 @@ class GestureActivity : AppCompatActivity() {
         GestureDetector(this@GestureActivity,
             object : GestureDetector.SimpleOnGestureListener() {
                 override fun onScroll(
-                    e1: MotionEvent,
+                    e1: MotionEvent?,
                     e2: MotionEvent,
                     distanceX: Float,
                     distanceY: Float
                 ): Boolean {
-                    val chaY = e2.rawY - e1.rawY
+                    val chaY = e2.rawY - (e1?.rawY ?: 0f)
                     log("chaY=$chaY")
                     vApps.translationY = (-vApps.height.toFloat() + chaY)
                         .coerceAtMost(0f)
@@ -218,7 +218,7 @@ class GestureActivity : AppCompatActivity() {
                 }
 
                 override fun onFling(
-                    e1: MotionEvent,
+                    e1: MotionEvent?,
                     e2: MotionEvent,
                     velocityX: Float,
                     velocityY: Float
