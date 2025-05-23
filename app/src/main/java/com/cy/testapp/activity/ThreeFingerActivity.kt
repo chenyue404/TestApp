@@ -72,6 +72,7 @@ class ThreeFingerActivity : AppCompatActivity() {
                     pointArrayStart[i] = Pair(event.getX(i), event.getY(i))
                 }
             }
+
             MotionEvent.ACTION_POINTER_DOWN -> {
                 log("event.actionIndex=${event.actionIndex}")
                 if (event.actionIndex < 4) {
@@ -87,6 +88,7 @@ class ThreeFingerActivity : AppCompatActivity() {
                 log("ACTION_POINTER_UP, ${pointArrayStart.asList()}")
                 judgeThreePointerGesture()
             }
+
             MotionEvent.ACTION_MOVE -> {
                 if (pointerCount >= 3) {
                     for (i in 0 until pointerCount.coerceAtMost(3)) {
@@ -146,6 +148,7 @@ class ThreeFingerActivity : AppCompatActivity() {
             abs(chaX) >= abs(chaY) -> {
                 if (chaX > 0) "d" else "a"
             }
+
             else -> {
                 if (chaY > 0) "s" else "w"
             }
@@ -159,7 +162,7 @@ class ThreeFingerActivity : AppCompatActivity() {
     private val detector: GestureDetector by lazy {
         GestureDetector(this, object : GestureDetector.SimpleOnGestureListener() {
             override fun onScroll(
-                e1: MotionEvent,
+                e1: MotionEvent?,
                 e2: MotionEvent,
                 velocityX: Float,
                 velocityY: Float
@@ -168,11 +171,11 @@ class ThreeFingerActivity : AppCompatActivity() {
                     if (finishing3Finger) return true
                 }
 
-                if (e2.x - e1.x > 100) {
+                if (e2.x - (e1?.x ?: 0f) > 100) {
                     log("onScroll右滑")
                     finishing3Finger = false
                 }
-                if (e2.x - e1.x < -100) {
+                if (e2.x - (e1?.x ?: 0f) < -100) {
                     log("onScroll左滑")
                     finishing3Finger = false
                 }

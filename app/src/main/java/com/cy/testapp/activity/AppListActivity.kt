@@ -32,7 +32,7 @@ class AppListActivity : BaseActivity() {
         }
         bt0.click {
             val info = appList.first()
-            val name = info.applicationInfo.name
+            val name = info.applicationInfo?.name
             val compileSdkVersion =
 //                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
 //                    val instanceFields = HiddenApiBypass.getInstanceFields(PackageInfo::class.java)

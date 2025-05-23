@@ -39,7 +39,7 @@ class FloatWindowService : LifecycleService() {
                     }
 
                     override fun onScroll(
-                        e1: MotionEvent,
+                        e1: MotionEvent?,
                         e2: MotionEvent,
                         distanceX: Float,
                         distanceY: Float
@@ -49,7 +49,7 @@ class FloatWindowService : LifecycleService() {
                     }
 
                     override fun onFling(
-                        e1: MotionEvent,
+                        e1: MotionEvent?,
                         e2: MotionEvent,
                         velocityX: Float,
                         velocityY: Float
