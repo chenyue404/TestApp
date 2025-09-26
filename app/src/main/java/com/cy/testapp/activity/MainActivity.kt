@@ -126,6 +126,12 @@ class MainActivity : AppCompatActivity() {
                     this,
                     InputActivity::class.java
                 ), "InputActivity", "输入框demo"
+            ),
+            ItemModel(
+                Intent(
+                    this,
+                    RotationAnimActivity::class.java
+                ), "RotationAnimActivity", "旋转动画"
             )
         )
 
@@ -133,7 +139,7 @@ class MainActivity : AppCompatActivity() {
             MyAdapter(itemModels)
         rvList.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
-        startActivity(itemModels.first().intent)
+        startActivity(itemModels.last().intent)
     }
 
     class ItemModel(

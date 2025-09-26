@@ -17,8 +17,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.AnimerActivityJava" />
-        <activity android:name=".activity.AnimerActivity" />
+        <activity android:name=".activity.RotationAnimActivity" />
         <activity android:name=".activity.AnimPopActivity" />
         <activity
             android:name=".activity.MainActivity"
