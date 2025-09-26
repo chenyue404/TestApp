@@ -1,5 +1,8 @@
 package com.cy.testapp.activity
 
+import android.widget.Button
+import com.chenyue404.androidlib.extends.bind
+import com.chenyue404.androidlib.extends.click
 import com.chenyue404.androidlib.widget.BaseActivity
 import com.cy.testapp.R
 
@@ -8,8 +11,12 @@ import com.cy.testapp.R
  */
 class ThemeActivity : BaseActivity() {
 
+    private val bt0 by bind<Button>(R.id.bt0)
+
     override fun getContentViewResId() = R.layout.activity_theme
     override fun initView() {
+        bt0.click {
+        }
     }
 }
 

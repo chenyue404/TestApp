@@ -106,18 +106,6 @@ class MainActivity : AppCompatActivity() {
             ItemModel(
                 Intent(
                     this,
-                    AnimerActivity::class.java
-                ), "AnimerActivity", "Animer demo"
-            ),
-            ItemModel(
-                Intent(
-                    this,
-                    AnimerActivityJava::class.java
-                ), "AnimerActivityJava", "Animer Java demo"
-            ),
-            ItemModel(
-                Intent(
-                    this,
                     FlowActivity::class.java
                 ), "FlowActivity", "Kotlin flow demo"
             ),
@@ -145,7 +133,7 @@ class MainActivity : AppCompatActivity() {
             MyAdapter(itemModels)
         rvList.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
-//        startActivity(itemModels.first().intent)
+        startActivity(itemModels.first().intent)
     }
 
     class ItemModel(
