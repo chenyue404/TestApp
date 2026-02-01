@@ -132,6 +132,12 @@ class MainActivity : AppCompatActivity() {
                     this,
                     RotationAnimActivity::class.java
                 ), "RotationAnimActivity", "旋转动画"
+            ),
+            ItemModel(
+                Intent(
+                    this,
+                    ComposeActivity::class.java
+                ), "ComposeActivity", "Compose"
             )
         )
 
