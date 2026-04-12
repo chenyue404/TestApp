@@ -19,7 +19,8 @@
             android:name=".activity.ComposeActivity"
             android:exported="false"
             android:label="@string/title_activity_compose"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".activity.RotationAnimActivity" />
         <activity android:name=".activity.AnimPopActivity" />
         <activity

@@ -6,21 +6,29 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeContentPadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.layout.positionInRoot
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -31,6 +39,7 @@ import coil.request.CachePolicy
 import coil.request.ImageRequest
 import com.chenyue404.androidlib.logcat.L
 import com.cy.testapp.activity.ui.theme.TestAppTheme
+import com.cy.testapp.widget.EmojiSuggestionPopup
 
 class ComposeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,10 +52,11 @@ class ComposeActivity : ComponentActivity() {
                         .safeContentPadding()
                         .fillMaxSize()
                 ) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+//                    Greeting(
+//                        name = "Android",
+//                        modifier = Modifier.padding(innerPadding)
+//                    )
+                    MyScreen(innerPadding)
                 }
             }
         }
@@ -123,5 +133,52 @@ private fun MyImage(key: String, loadSuccess: Boolean) {
 fun GreetingPreview() {
     TestAppTheme {
         Greeting("Android")
+    }
+}
+
+@Composable
+fun MyScreen(innerPadding: PaddingValues) {
+    var text by remember { mutableStateOf("") }
+    var textFieldRect by remember { mutableStateOf<Rect?>(null) }
+
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(innerPadding)
+    ) {
+//        Column(
+//            modifier = Modifier
+//                .fillMaxSize()
+//                .padding(16.dp),
+//            verticalArrangement = Arrangement.Bottom
+//        ) {
+        TextField(
+            value = text,
+            onValueChange = { text = it },
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .fillMaxWidth()
+                .onGloballyPositioned { coordinates ->
+                    // 获取输入框在窗口中的全局位置（屏幕坐标）
+//                        val position = coordinates.positionInWindow()
+                    val position = coordinates.positionInRoot()
+                    val size = coordinates.size
+                    val top = position.y
+//                        L.d { "position: $position, size: $size" }
+                    textFieldRect = Rect(
+                        left = position.x,
+                        top = top,
+                        right = position.x + size.width,
+                        bottom = top + size.height
+                    )
+                }
+        )
+//        }
+
+        EmojiSuggestionPopup(
+            textFieldValue = text,
+            textFieldPosition = textFieldRect,
+            visible = text.isNotEmpty()
+        )
     }
 }
